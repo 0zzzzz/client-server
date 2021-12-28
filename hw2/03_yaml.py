@@ -14,10 +14,11 @@ import yaml
 yaml_arr = {
     'products': ['apples', 'oranges', 'lemons'],
     'warehouse': 23,
-    'wh_rooms': {'jamazone': {
-        'room3': {
-            'article': '1782278й',
-            'price': '100€'
+    'wh_rooms':
+        {'jamazoom': {
+            'room3': {
+                'article': '1782278й',
+                'price': '100€'
         }},
         'worstbay': {
             'room27': {
@@ -27,12 +28,13 @@ yaml_arr = {
     }
 }
 
-with open('data_yaml.yaml', 'w', encoding='utf-8') as file:
-    yaml.dump(yaml_arr, file, default_flow_style=False, allow_unicode=True)
+def yaml_create_read(to_yaml):
+    with open('data_yaml.yaml', 'w', encoding='utf-8') as file:
+        yaml.dump(to_yaml, file, default_flow_style=False, allow_unicode=True)
+    with open('data_yaml.yaml', encoding='utf-8') as file:
+        read = yaml.load(file, Loader=yaml.FullLoader)
+        return read
 
-with open('data_yaml.yaml', encoding='utf-8') as file:
-    F_N_CONTENT = yaml.load(file, Loader=yaml.FullLoader)
-    print(F_N_CONTENT)
 
 if __name__ == '__main__':
-    pass
+    print(yaml_create_read(yaml_arr))

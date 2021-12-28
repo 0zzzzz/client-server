@@ -30,7 +30,6 @@ def write_order_to_json(user_input):
         json_str['orders'].append(temp_arr)
     with open('orders.json', 'w', encoding='utf-8') as file:
         dict_as_string = json.dumps(json_str)
-        # print('type(dict_as_string)', type(dict_as_string))
         file.write(dict_as_string)
 
 
