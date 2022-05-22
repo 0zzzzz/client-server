@@ -1,0 +1,14 @@
+products:
+- apples
+- oranges
+- lemons
+warehouse: 23
+wh_rooms:
+  jamazoom:
+    room3:
+      article: 1782278й
+      price: 100€
+  worstbay:
+    room27:
+      article: 45645345й
+      price: 1000€
